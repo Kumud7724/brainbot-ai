@@ -37,7 +37,7 @@ async function sendMessage() {
 
     try {
 
-        const response = await fetch("https://brainbot-ai.onrender.com/chat"), {
+        const response = await fetch("/chat"), {
 
             method: "POST",
 
