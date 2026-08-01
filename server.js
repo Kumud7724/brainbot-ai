@@ -1,5 +1,5 @@
 require("dotenv").config();
-
+const path = require("path");
 const express = require("express");
 const cors = require("cors");
 const Groq = require("groq-sdk");
@@ -186,6 +186,16 @@ Make it easy to follow.`;
     }
 
 });
+const path = require("path");
+
+// Static files serve karega
+app.use(express.static(path.join(__dirname)));
+
+// Home page
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
+
 
 app.listen(process.env.PORT || 3000, () => {
 
